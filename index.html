@@ -91,12 +91,13 @@
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
   }
 
-  .music-toggle {
-  position: relative; /* вместо absolute */
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  margin-left: -40px;
+.music-toggle {
+  position: relative;
+  display: flex;               /* центрируем через flexbox */
+  justify-content: center;     /* по горизонтали */
+  align-items: center;         /* по вертикали */
+  margin-top: 20px;            /* отступ сверху */
+  margin-bottom: 10px;         /* чуть снизу */
 }
 
 #toggle-music {
@@ -107,6 +108,9 @@
   padding: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #toggle-music:hover {
@@ -119,6 +123,90 @@
   height: 30px;
   filter: brightness(0) invert(1);
 }
+
+.program-section {
+  position: relative;
+  background: linear-gradient(135deg, #0e0e0e 0%, #1c1c1c 100%);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 40px;
+  max-width: 900px;
+  margin: 80px auto;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.program-section .overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.program-content {
+  position: relative;
+  z-index: 2;
+}
+
+.program-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.program-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.program-list li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #e5e5e5;
+  margin: 18px 0;
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.program-list li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+
+.program-list .time {
+  font-weight: 600;
+  color: #ffffff;
+  min-width: 80px;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* 📱 адаптация для телефона */
+@media (max-width: 768px) {
+  .program-title {
+    font-size: 32px;
+  }
+  .program-list li {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  .program-list .time {
+    min-width: 60px;
+  }
+} 
 
 /* 📱 адаптация для телефона */
 @media (max-width: 768px) {
@@ -334,6 +422,17 @@
       </div>
 
 
+      <section class="program-section">
+  <div class="overlay"></div>
+  <div class="program-content">
+    <h2 style="color: rgb(255, 255, 255); font-weight: 400; font-size: 40px">Тойдың бағдарламасы:</h2><br><p data-animation="fadeInUp" data-delay="1.4s" style="color:white;">
+
+    <ul class="program-list">
+      <li><span class="time">18:00</span> — Тойдың басталуы</li>
+      <li><span class="time">18:30</span> — Беташар</li>
+    </ul>
+  </div>
+</section>
 
                    <section class="address-section">
   <h2 class="address-title">Мекен – жайымыз:</h2>
