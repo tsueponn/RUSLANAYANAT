@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
 
-    <meta property="og:image" content="images/odtag.png">
-
 
     <!-- Google Fonts: подключаем Playfair Display и Great Vibes -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -80,42 +78,53 @@
     color: #ddd;
   }
 
-.music-toggle {
-  position: absolute;
-  top: 55%;
-  left: 10%;
-  transform: translateY(-50%);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* 💎 Дополнительная подсветка основного заголовка */
+  .timer-section h2 {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 40px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 1), 2px 2px 20px rgba(255, 255, 255, 0.4);
+  }
+
+  /* ✨ Тень для нижнего текста */
+  .timer-section p {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .music-toggle {
+  position: relative; /* вместо absolute */
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  margin-left: -40px;
 }
 
 #toggle-music {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
   border-radius: 50%;
-  padding: 14px;
+  padding: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255,255,255,0.4);
 }
 
 #toggle-music:hover {
-  background: rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
 }
 
 #music-icon {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   filter: brightness(0) invert(1);
 }
 
+/* 📱 адаптация для телефона */
 @media (max-width: 768px) {
-  .music-toggle {
-    top: 62%;
-    left: 8%;
+  #music-icon {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -159,33 +168,25 @@
                         <div class="col-lg-10">
                             <div class="slider_content text-center">
                                 <h5 class="slider_sub_title" data-animation="fadeInUp" data-delay="0.2s">WEEDING DAY</h5>
+                                
                                 <h2 class="slider_title elegant-names" data-animation="fadeInUp" data-delay="0.7s">
   Руслан <span>&</span> Аянат
-</h2>
+</h2><br>
 
 <!-- 🎵 КНОПКА МУЗЫКИ -->
- <div class="single_slider bg_cover d-flex align-items-center" 
-     style="background-image: url(https://i.pinimg.com/736x/ca/7e/6b/ca7e6b98af9dcf9270039bc275ea0bd4.jpg); 
-            position: relative; overflow: visible;">
 <div class="music-toggle" data-animation="fadeInUp" data-delay="0.9s">
   <button id="toggle-music">
-    <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music Icon">
+    <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="">
   </button>
+
   <audio id="background-music" loop>
     <source src="assets/music/song.mp3" type="audio/mpeg">
   </audio>
 </div>
-
-
-<br><br><br>
-
-<span class="location" data-animation="fadeInUp" data-delay="1s">
-  Құрметті қонақтар! <br> Сіздерді үлкен қуанышымызға — тойымызға шақырамыз!
-</span> <br>
+                                <span class="location" data-animation="fadeInUp" data-delay="1s"> Құрметті қонақтар! <br>
 Сіздерді үлкен қуанышымызға — тойымызға шақырамыз!</span><br><br>
                                 <p data-animation="fadeInUp" data-delay="1.4s"><img src="assets/images/header-shape-1.png" alt="Shape">5 Декабрь 2025<img src="assets/images/header-shape-2.png" alt="Shape"></p>
                             </div> <!-- slider content -->
-                            
                         </div>
                     </div> <!-- row -->
                 </div> <!-- container -->
@@ -209,12 +210,10 @@
 
     <section id="our_love" class="our_love_area pt-120">
         <div class="container">
-            
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center pb-30">
                         <h5 class="title" style="color: #fff;">Қуанышымызға ортақтасыңыздар!</h5>
-                        
                         
                     </div> <!-- section title -->
                 </div>
@@ -232,7 +231,6 @@
     НАҒАШЫ-ЖИЕН, БӨЛЕЛЕР, <br> 
     ДОС-ЖАРАНДАР, ӘРІПТЕСТЕР,<br>  
     КӨРШІЛЕР!
-    
   </h4>
 </div>
                     
@@ -308,7 +306,7 @@
         <div class="spacer" style="height: 80px;"></div>
         <h2 style="color: rgb(255, 255, 255); font-weight: 400; font-size: 40px">Той Салтанатына дейын:</h2><br><p data-animation="fadeInUp" data-delay="1.4s" style="color:white;">
 <img src="assets/images/header-shape-1.png" alt="Shape" style="filter: brightness(0) invert(1);">
-  5 December 2025
+  5 Декабрь 2025
 <img src="assets/images/header-shape-2.png" alt="Shape" style="filter: brightness(0) invert(1);">
 </p>
         <div class="spacer" style="height: 80px;"></div>
@@ -469,10 +467,6 @@
       updateCountdown();
 
 
-      
-    </script>
-
-    <script>
   const audio = document.getElementById('background-music');
   const button = document.getElementById('toggle-music');
   const icon = document.getElementById('music-icon');
@@ -481,16 +475,15 @@
   button.addEventListener('click', () => {
     if (!isPlaying) {
       audio.play();
-      icon.src = "https://cdn-icons-png.flaticon.com/512/565/565616.png"; // иконка «пауза»
+      icon.src = "https://png.klev.club/uploads/posts/2024-05/png-klev-club-udlh-p-ikonka-pauzi-png-27.png"; // пауза
     } else {
       audio.pause();
-      icon.src = "https://cdn-icons-png.flaticon.com/512/727/727245.png"; // иконка «воспроизведение»
+      icon.src = "https://cdn-icons-png.flaticon.com/512/727/727245.png"; // play
     }
     isPlaying = !isPlaying;
   });
-</script>
 
-    
+    </script>
 
 </body>
 
